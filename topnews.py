@@ -1,5 +1,5 @@
 import requests
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree
   
 # url of news rss feed
 RSS_FEED_URL = "https://www.thenews.com.pk/rss/1/1"    
@@ -19,7 +19,7 @@ def parseXML(rss):
     utility function to parse XML format rss feed
     '''
     # create element tree root object
-    root = ET.fromstring(rss)
+    root = defusedxml.ElementTree.fromstring(rss)
   
     # create empty list for news items
     newsitems = []
