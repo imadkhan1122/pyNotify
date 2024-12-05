@@ -9,7 +9,7 @@ def loadRSS():
     utility function to load RSS feed
     '''
     # create HTTP request response object
-    resp = requests.get(RSS_FEED_URL)
+    resp = requests.get(RSS_FEED_URL, timeout=60)
   
     # return response content
     return resp.content
